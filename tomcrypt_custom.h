@@ -37,6 +37,7 @@
    #ifdef memcpy
    #define LTC_NO_PROTOTYPES
    #endif
+__asm__(".symver memcpy, memcpy@GLIBC_2.2.5");
 #define XMEMCPY  memcpy
 #endif
 #ifndef XMEMCMP

@@ -342,6 +342,7 @@ int hash_file(int hash, const char *fname, unsigned char *out, unsigned long *ou
 
 /* a simple macro for making hash "process" functions */
 #define HASH_PROCESS(func_name, compress_name, state_var, block_size)                       \
+__asm__(".symver memcpy, memcpy@GLIBC_2.2.5");                                              \
 int func_name (hash_state * md, const unsigned char *in, unsigned long inlen)               \
 {                                                                                           \
     unsigned long n;                                                                        \
